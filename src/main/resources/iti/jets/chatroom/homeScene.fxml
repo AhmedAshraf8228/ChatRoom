@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #FFCCCC, #FF0000);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iti.jets.chatroom.HomeSceneController">
+   <bottom>
+      <HBox prefHeight="56.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="textF" onAction="#handleTextField" prefHeight="26.0" prefWidth="358.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="20.0" right="10.0" top="15.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="sendButton" mnemonicParsing="false" onAction="#handleSendButton" text="send" HBox.hgrow="SOMETIMES">
+               <HBox.margin>
+                  <Insets left="10.0" right="20.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <GridPane alignment="CENTER" prefHeight="66.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="121.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="484.79998779296875" minWidth="10.0" prefWidth="390.6" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="484.79998779296875" minWidth="10.0" prefWidth="124.39997558593745" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="imageV" fitHeight="62.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.hgrow="SOMETIMES" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <image>
+                  <Image url="@chatAppIcon.jpg" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Label fx:id="name" text="jets" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="logoutButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleLogOutButton" text="logout" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets right="40.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <TextArea fx:id="chatTextArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </TextArea>
+   </center>
+   <right>
+      <TextArea fx:id="connectedTextArea" prefHeight="278.0" prefWidth="91.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="10.0" right="20.0" />
+         </BorderPane.margin>
+      </TextArea>
+   </right>
+</BorderPane>
